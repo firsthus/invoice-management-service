@@ -1,0 +1,50 @@
+server:
+  port: 4001
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+
+spring:
+  application:
+    name: invoice-management-service
+    url: http://localhost:4001
+  datasource:
+    username: root
+    password: Leafnode1@.
+    url: jdbc:mysql://localhost:3306/oxygen?createDatabaseIfNotExist=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+springdoc:
+  swagger-ui:
+    tags-sorter: alpha
+    operations-sorter: method
+    display-request-duration: true
+    display-operation-id: true
+    doc-expansion: none
+    tryItOutEnabled: true
+    persist-authorization: true
+  api-docs:
+    path: /oxygen-api-docs
+    enabled: true
+
+
+jwt:
+  token:
+    issuer: ${spring.application.name}
+  access-token:
+    secret: secret
+    expiration-in-minutes: 15
+
+
+cors:
+  allowed-origins: "*"
+
+
+payment-ui:
+  base-url: https://payments.oxygen.com
