@@ -18,7 +18,7 @@ public class CompanyController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createUser(@RequestBody @Valid CreateCompanyRequest request) {
+    public void registerCompany(@RequestBody @Valid CreateCompanyRequest request) {
         companyService.createCompany(request);
     }
 
