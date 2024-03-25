@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -20,7 +22,6 @@ public class CompanyServiceImpl implements CompanyService {
 
     private final CompanyRepositoryService companyRepositoryService;
     private final UserService userService;
-
 
     @Override
     @Transactional
@@ -46,7 +47,7 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     @Transactional
-    public CompanyResponse getUserByUuid(String uuid) {
+    public CompanyResponse getCompanyByUuid(String uuid) {
         Company company = companyRepositoryService.getCompanyByUuid(uuid);
         return new CompanyResponse(company);
     }

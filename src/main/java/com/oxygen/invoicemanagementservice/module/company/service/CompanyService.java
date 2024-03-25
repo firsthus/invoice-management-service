@@ -8,6 +8,6 @@ public interface CompanyService {
 
     void createCompany(CreateCompanyRequest request);
 
-    CompanyResponse getUserByUuid(String uuid);
+    CompanyResponse getCompanyByUuid(String uuid);
 
 }

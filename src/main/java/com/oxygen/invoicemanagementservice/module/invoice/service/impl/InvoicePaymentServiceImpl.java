@@ -38,7 +38,6 @@ public class InvoicePaymentServiceImpl implements InvoicePaymentService {
     @Override
     public InvoiceTransactionResponse initiateInvoicePayment(InvoicePaymentRequest request) {
 
-
         Invoice invoice = invoiceRepositoryService.getInvoiceByUuid(request.getInvoiceUuid());
 
         validateInvoicePayment(invoice);
