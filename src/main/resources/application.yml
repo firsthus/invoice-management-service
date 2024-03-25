@@ -8,15 +8,14 @@ management:
       exposure:
         include: health
 
-
 spring:
   application:
     name: invoice-management-service
     url: http://localhost:4001
   datasource:
-    username: root
-    password: Leafnode1@.
-    url: jdbc:mysql://localhost:3306/oxygen?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: ${OXYGEN_DATASOURCE_USERNAME:root}
+    password: ${OXYGEN_DATASOURCE_PASSWORD:root}
+    url: jdbc:mysql://${OXYGEN_DATASOURCE_HOST:localhost}:${OXYGEN_DATASOURCE_PORT:3306}/${OXYGEN_SCHEMA_NAME:oxygen}?createDatabaseIfNotExist=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 

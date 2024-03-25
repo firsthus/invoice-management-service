@@ -46,3 +46,53 @@ This detailed specification outlines the development of an invoice and payment l
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Running the Application
+
+1. Ensure you have Java 21, Maven, and MySQL installed on your system. You can check this by running the following commands in your terminal:
+
+```bash
+java -version
+mvn -version
+mysql --version
+```
+
+2. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/firsthus/invoice-management-service
+```
+
+3. Navigate into the project directory:
+
+```bash
+cd invoice-management-service
+```
+
+4. Build the project using Maven:
+
+```bash
+mvn clean install
+```
+
+5. Before running the application, ensure that MySQL is running and accessible. The application expects a MySQL server running on localhost with the default port (3306). If your MySQL server is running on a different host or port, you can pass these as environment variables:
+
+```bash
+export OXYGEN_DATASOURCE_HOST=<your-mysql-host>
+export OXYGEN_DATASOURCE_PORT=<your-mysql-port>
+export OXYGEN_SCHEMA_NAME=<your-schema-name>
+export OXYGEN_DATASOURCE_USERNAME=<your-mysql-username>
+export OXYGEN_DATASOURCE_PASSWORD=<your-mysql-password>
+```
+
+Replace `<your-mysql-host>`, `<your-mysql-port>`, `<your-mysql-username>`, and `<your-mysql-password>` with your actual MySQL host, port, username, and password respectively.
+
+6. Run the application using the Spring Boot Maven Plugin:
+
+
+```bash
+mvn spring-boot:run
+```
+
+The application should now be running and accessible on `localhost:4001` (or whatever port you have configured).
