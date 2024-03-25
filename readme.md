@@ -96,3 +96,5 @@ mvn spring-boot:run
 ```
 
 The application should now be running and accessible on `localhost:4001` (or whatever port you have configured).
+
+7. You can access the Swagger UI to interact with the API by navigating to http://localhost:4001/swagger-ui/index.html#/ in your browser.
